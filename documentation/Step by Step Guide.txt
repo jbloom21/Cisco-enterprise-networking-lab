@@ -1,0 +1,51 @@
+Implementation Guide
+
+Step 1: Build the Topology
+
+I started by placing one router, two switches, six PCs, and a web server
+in Packet Tracer. After that, I connected everything with the correct
+cables.
+
+Step 2: Create the VLANs
+
+Next, I created separate VLANs for each department: HR, Sales, IT,
+Guest, and Servers. This keeps traffic organized and separates each part
+of the network.
+
+Step 3: Configure the Trunks
+
+I configured trunk links between the router and SW1, and between SW1 and
+SW2 so the VLAN traffic could travel between devices.
+
+Step 4: Configure Inter-VLAN Routing
+
+Router-on-a-Stick was set up on the router by creating subinterfaces for
+each VLAN. This allowed devices in different VLANs to communicate when
+permitted.
+
+Step 5: Set Up DHCP
+
+DHCP pools were created for the HR, Sales, IT, and Guest VLANs so the
+client PCs could automatically receive IP addresses.
+
+Step 6: Configure the Server
+
+The web server was given a static IP address in the Server VLAN so it
+would always be reachable at the same address.
+
+Step 7: Configure ACLs
+
+I created an extended ACL to prevent users in the Guest VLAN from
+accessing the internal business VLANs while still allowing access to the
+web server.
+
+Step 8: Secure the Switches
+
+Basic port security was enabled on the access ports, and any unused
+switch ports were shut down as a basic security measure.
+
+Step 9: Test the Network
+
+Finally, I tested the network by checking IP addresses, running ping
+tests, opening the web server in a browser, and using Cisco IOS show
+commands to verify the configuration.
